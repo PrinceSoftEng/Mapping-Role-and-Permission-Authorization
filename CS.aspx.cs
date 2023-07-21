@@ -9,13 +9,14 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Mapping_Role_Authorization.Master;
 using Mapping_Role_Authorization.BAL;
+using System.Diagnostics.Eventing.Reader;
 
 namespace Mapping_Role_Authorization
 {
     public partial class CS : System.Web.UI.Page
     {
         clsMasterRole objMasterRole = new clsMasterRole();
-        clsBalRole objBalRole = new clsBalRole();
+        clsDALRole objBalRole = new clsDALRole();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -55,7 +56,6 @@ namespace Mapping_Role_Authorization
             {
                 objBalRole.roleId = Convert.ToInt32(ddlRoles.SelectedValue);
                 var sdr = objMasterRole.LoadCheckedData(objBalRole);
-                //int roleId = Convert.ToInt32(ddlRoles.SelectedValue);
                 foreach (GridViewRow gvRow in gvPermissions.Rows)
                 {
                     if (sdr.Read())
@@ -74,7 +74,11 @@ namespace Mapping_Role_Authorization
                         chkDelete.Checked = Convert.ToBoolean(sdr["Delete"]);
                         chkExport.Checked = Convert.ToBoolean(sdr["Export"]);
                     }
-                }                
+                    else 
+                    {
+                        this.ClearControls();
+                    }
+                }                    
             }
         }
 

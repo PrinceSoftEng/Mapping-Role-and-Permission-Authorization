@@ -10,29 +10,29 @@ using System.Web;
 
 namespace Mapping_Role_Authorization.Master
 {
-    public class clsMasterRole
+    public class clsMasterRoleMaster
     {
         public DataTable GridLoadPermission()
         { 
-            clsDalRole objDalRole = new clsDalRole();
+            clsBalRoleMaster objDalRole = new clsBalRoleMaster();
             return objDalRole.GridLoadPermission();
         }
 
         public DataTable BindDrowDownRole()
         {
-            clsDalRole objDalRole = new clsDalRole();
+            clsBalRoleMaster objDalRole = new clsBalRoleMaster();
             return objDalRole.BindDrowDownRole();
         }
 
-        public Int32 AddorUpdate(clsBalRole objbalrole)
+        public Int32 AddorUpdate(clsDalRoleMaster objbalrole)
         {
-            clsDalRole objDalRole= new clsDalRole();
+            clsBalRoleMaster objDalRole= new clsBalRoleMaster();
             return objDalRole.AddorUpdate(objbalrole);
         }
 
-        public IDataReader LoadCheckedData(clsBalRole objbalrole)
+        public IDataReader LoadCheckedData(clsDalRoleMaster objbalrole)
         {
-            clsDalRole objDalRole=new clsDalRole();
+            clsBalRoleMaster objDalRole=new clsBalRoleMaster();
             return objDalRole.LoadCheckedData(objbalrole);
         }
     }

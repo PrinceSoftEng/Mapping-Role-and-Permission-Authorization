@@ -71,7 +71,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BAL\clsBalRole.cs" />
+    <Compile Include="DAL\clsDalRoleMaster.cs" />
     <Compile Include="CS.aspx.cs">
       <DependentUpon>CS.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -79,8 +79,8 @@
     <Compile Include="CS.aspx.designer.cs">
       <DependentUpon>CS.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DAL\clsDalRole.cs" />
-    <Compile Include="Master\clsMasterRole.cs" />
+    <Compile Include="BAL\clsBalRoleMaster.cs" />
+    <Compile Include="Master\clsMasterRoleMaster.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

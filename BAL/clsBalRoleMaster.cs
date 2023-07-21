@@ -13,9 +13,9 @@ using System.Web.Security;
 
 namespace Mapping_Role_Authorization.DAL
 {
-    public class clsDalRole
+    public class clsBALRole
     {
-        clsBalRole objBalRole;
+        clsDALRole objBalRole;
         private string constring = ConfigurationManager.ConnectionStrings["constr"].ConnectionString;
 
         public DataTable GridLoadPermission()
@@ -55,7 +55,7 @@ namespace Mapping_Role_Authorization.DAL
             }
         }
 
-        public Int32 AddorUpdate(clsBalRole objBalRole)
+        public Int32 AddorUpdate(clsDALRole objBalRole)
         {
             using (SqlConnection con = new SqlConnection(constring))
             {
@@ -78,7 +78,7 @@ namespace Mapping_Role_Authorization.DAL
             }
         }
 
-        public IDataReader LoadCheckedData(clsBalRole objBalRole)
+        public IDataReader LoadCheckedData(clsDALRole objBalRole)
         {
             using (SqlConnection con = new SqlConnection(constring))
             {
