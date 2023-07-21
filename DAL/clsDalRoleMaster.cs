@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Mapping_Role_Authorization.BAL
 {
-    public class clsDALRole
+    public class clsDalRoleMaster
     {
         private int str_ProgramId;
         private int str_RoleId;

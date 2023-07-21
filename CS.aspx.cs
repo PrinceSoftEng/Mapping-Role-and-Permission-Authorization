@@ -15,8 +15,8 @@ namespace Mapping_Role_Authorization
 {
     public partial class CS : System.Web.UI.Page
     {
-        clsMasterRole objMasterRole = new clsMasterRole();
-        clsDALRole objBalRole = new clsDALRole();
+        clsMasterRoleMaster objMasterRole = new clsMasterRoleMaster();
+        clsDalRoleMaster objBalRole = new clsDalRoleMaster();
 
         protected void Page_Load(object sender, EventArgs e)
         {

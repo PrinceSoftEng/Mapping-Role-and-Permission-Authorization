@@ -13,14 +13,12 @@ using System.Web.Security;
 
 namespace Mapping_Role_Authorization.DAL
 {
-    public class clsBALRole
+    public class clsBalRoleMaster
     {
-        clsDALRole objBalRole;
         private string constring = ConfigurationManager.ConnectionStrings["constr"].ConnectionString;
 
         public DataTable GridLoadPermission()
         {
-
             using (SqlConnection con = new SqlConnection(constring))
             {
                 using (SqlCommand cmd = new SqlCommand("select PM.programId,PM.programList,P.[Read],P.[Add],P.[Update],P.[Delete],P.[Export] from tblRoleNPermission P Right outer join tblPageListMaster PM on PM.programId=P.permissionId order by programList", con))
@@ -55,7 +53,7 @@ namespace Mapping_Role_Authorization.DAL
             }
         }
 
-        public Int32 AddorUpdate(clsDALRole objBalRole)
+        public Int32 AddorUpdate(clsDalRoleMaster objBalRole)
         {
             using (SqlConnection con = new SqlConnection(constring))
             {
@@ -78,7 +76,7 @@ namespace Mapping_Role_Authorization.DAL
             }
         }
 
-        public IDataReader LoadCheckedData(clsDALRole objBalRole)
+        public IDataReader LoadCheckedData(clsDalRoleMaster objBalRole)
         {
             using (SqlConnection con = new SqlConnection(constring))
             {
@@ -98,7 +96,6 @@ namespace Mapping_Role_Authorization.DAL
                     }
                 }
             }
-            return null;
         }
     }
 }
